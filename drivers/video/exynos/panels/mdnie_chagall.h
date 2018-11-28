@@ -200,13 +200,11 @@ struct mdnie_info {
 	mdnie_t sequence_buffer[256];
 };
 
-extern int mdnie_calibration(int *r);
 extern int mdnie_open_file(const char *path, char **fp);
 extern int mdnie_register(struct device *p, void *data, mdnie_w w, mdnie_r r);
 #ifdef CONFIG_EXYNOS_DECON_DUAL_DISPLAY
 extern int mdnie2_register(struct device *p, void *data, mdnie_w w, mdnie_r r);
 #endif
-extern struct mdnie_table *mdnie_request_table(char *path, struct mdnie_table *s);
 extern ssize_t attr_store_for_each(struct class *cls, const char *name, const char *buf, size_t size);
 extern struct class *get_mdnie_class(void);
 

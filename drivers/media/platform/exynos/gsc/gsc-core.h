@@ -136,6 +136,7 @@ enum gsc_dev_flags {
 	ST_CAPT_SHUT,
 	ST_CAPT_APPLY_CFG,
 	ST_CAPT_JPEG,
+	ST_IN_IRQ,
 };
 
 enum gsc_qos_status {
@@ -578,6 +579,7 @@ struct gsc_dev {
 	atomic_t			clk_cnt;
 	void __iomem			*regs;
 	wait_queue_head_t		irq_queue;
+	wait_queue_head_t		irq_finish;
 	struct workqueue_struct		*irq_workqueue;
 	struct gsc_m2m_device		m2m;
 	struct gsc_output_device	out;
